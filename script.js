@@ -6,8 +6,8 @@ setInterval(updateClock, 10);
 function updateClock() {
   let date = new Date();
   let sec = date.getSeconds() / 60;
-  let min = date.getMinutes() / 60;
-  let hour = date.getHours() / 12;
+  let min = (date.getMinutes() + sec) / 60;
+  let hour = (date.getHours() + min) / 12;
 
   secDiv.style.transform = "rotate(" + sec * 360 + "deg)";
   minDiv.style.transform = "rotate(" + min * 360 + "deg)";
